@@ -1,0 +1,74 @@
+body {background-color: black;}
+
+h1 {text-align:center; color: white; height: 100px}
+
+.grid-container {
+    margin: 1em;
+    display: grid; width:calc(100vw - 4em); height:calc(100vh - 100px - 4em);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    color: white;
+    background-color: white;
+    gap: 0.5em;
+
+    position:relative;
+    
+}
+
+.grid-container > button {
+    background-color: black;
+    color: white;
+    border-style: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+    
+}
+
+.grid-container > button:disabled {
+    cursor: auto;
+}
+
+.grid-container.circle > button {
+    cursor: url('../images/circle.png'), pointer;
+}
+
+.grid-container.cross > button {
+    cursor: url('../images/cross.png'), pointer;
+}
+
+.grid-container > button.circle {
+    background-image: url('../images/circle.png')
+}
+
+.grid-container > button.cross {
+    background-image: url('../images/cross.png')
+}
+
+.grid-container > .strikethrough {
+    position: absolute;
+    border-radius: 0.5em;
+    border: 5px solid red;
+
+}
+.grid-container > .strikethrough.horizontal {
+    top: 0px;
+    left: 0px;
+    width:100%;
+    height: 1px;
+
+}
+.grid-container > .strikethrough.vertical {
+    top: 0px;
+    left: 0px;
+    width:1px;
+    height: 100%;
+
+}
+
+
+h1 span#resultPane img {
+    max-width: 1em;
+}
+
+@import 'bootstrap/dist/css/bootstrap.css'
