@@ -1,3 +1,43 @@
+# TicTacToe Logic
+
+## State 
+### State Setting 
+
+{
+    state: "Play|Win|Draw"
+    arrButtonStatus: array of 9 buttons status ("", "cross" or "circle")
+    currentIcon: ("cross"|"circle")
+    winLine:(Vertical|Horizontal|SlashDiagonal|BackSlashDiagonal)
+    winVerticalPosition:0
+    winHorizontalPosition:0
+}
+
+
+### State "Start" 
+ - run functon "setup"
+
+
+### State "Play"
+ - 1. Waiting for one of the events: 
+    a. Button click from gamer then run function "CheckWin"
+    b. "Reset" button click then run function "Setup"
+
+### State "Win" or "Draw"
+Wait for event "Reset" button click then run function "Setup"
+
+
+
+## Functions:
+
+- Setup - initialize state setting and change state to "Play"
+
+- CheckWin -
+    update icon array and check if the gamer win based on icon array
+    -- If the gamer win then change state to "Win"
+    -- Else If the all icons are clicked then change state to "Draw"
+    -- Else change gamer's role (from "cross" to "circle or vice versa) and keep state to "Play"
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
